@@ -24,4 +24,6 @@ function DetailCard({weather_icon, data}) {
     )
 }
 
+
+
 export default DetailCard

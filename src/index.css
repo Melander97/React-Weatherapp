@@ -14,7 +14,7 @@ h1 {
 }
 
 .form-container {
-    background: url('./assets/öken.jpeg') no-repeat 50% 40% /cover;
+    background: url('./assets/desert.jpg') no-repeat 50% 40% /cover;
     height: auto;
     @apply w-2/4 p-5 rounded-3xl
 }
@@ -29,3 +29,4 @@ h1 {
     margin-top: -3px;
     @apply animate-ping bg-pink-800;
 }
+

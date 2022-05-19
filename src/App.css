@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.App.Warm {
+  background-image: url('./assets/rainy.jpeg');
+}
+
+.App.Sand {
+  background-image: url('./assets/cloudy.jpeg');
+}
+

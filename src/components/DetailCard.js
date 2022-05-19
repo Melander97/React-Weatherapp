@@ -19,6 +19,9 @@ function DetailCard({weather_icon, data}) {
             <p className="text-gray-400 text-lg">Cloud Cover: {clouds.all}%</p>
             <p className="text-gray-400 text-lg">Min Temp: {Math.round(main.temp_min)}&deg;C</p>
             <p className="text-gray-400 text-lg">Max Temp: {Math.round(main.temp_max)}&deg;C</p>
+           
+            <p className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16 ) ?  (weather.main.temp > 30 ) ?
+                'App Sand' : 'App Warm' : 'App') : 'App'} ></p>
             </div>
         </div>
     )

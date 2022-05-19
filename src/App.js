@@ -14,6 +14,13 @@ function App() {
   const [city, setCity] = useState('Unknown location')
   const [weatherIcon, setWeatherIcon] = useState(`${process.env.REACT_APP_ICON_URL}10n@2x.png`)
 
+  const celsiusToFahrenheit = celsius => celsius * 9/5 + 32;
+  const fahrenheitToCelsius = fahrenheit => (fahrenheit - 32) * 5/9;
+
+  celsiusToFahrenheit(15);    // 59
+  fahrenheitToCelsius(59);    // 15
+
+ 
   const handleChange = input => {
     const {value} = input.target
     setSearchTerm(value)
@@ -94,6 +101,9 @@ function App() {
               </div> :
               <>
                 <h1 className="text-5xl text-gray-800 mt-auto mb-4">Today</h1>
+                <button onClick={"convert"} className="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded m-2 w-48">
+                 Convert to farenheit
+                </button>
                 <DetailCard weather_icon={weatherIcon} data={weatherData} />
                 <h1 className="text-3xl text-gray-600 mb-4 mt-10">More On {city}</h1>
                 <ul className="grid grid-cols-2  gap-2">

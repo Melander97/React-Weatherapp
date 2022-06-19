@@ -14,6 +14,12 @@ function App() {
     `${process.env.REACT_APP_ICON_URL}10n@2x.png`
   );
 
+  const [isCelcius, setIsCelcius] = useState(true);
+
+  const changeUnit = () => {
+    setIsCelcius(!isCelcius);
+  };
+
   {
     /* test convert celcius to fahrenheit */
   }
@@ -128,19 +134,31 @@ function App() {
               <>
                 <h1 className="text-5xl text-gray-800 mt-auto mb-4">Today</h1>
                 <button
-                  onClick="convertToFahrenheit()"
+                  onClick={() => {
+                    changeUnit();
+                  }}
                   className="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded m-2 w-48"
                 >
                   Convert to farenheit
                 </button>
-                <DetailCard weather_icon={weatherIcon} data={weatherData} />
+                <DetailCard
+                  isCelcius={isCelcius}
+                  weather_icon={weatherIcon}
+                  data={weatherData}
+                />
                 <h1 className="text-3xl text-gray-600 mb-4 mt-10">
                   More On {city}
                 </h1>
                 <ul className="grid grid-cols-2  gap-2">
                   {weatherData.list.map((days, index) => {
                     if (index > 0) {
-                      return <SummaryCard key={index} day={days} />;
+                      return (
+                        <SummaryCard
+                          isCelcius={isCelcius}
+                          key={index}
+                          day={days}
+                        />
+                      );
                     }
                   })}
                 </ul>

@@ -1,14 +1,19 @@
 import moment from "moment";
 
-function SummaryCard({ day }) {
+function SummaryCard({ day, isCelcius }) {
   let day_icon = `${
     process.env.REACT_APP_ICON_URL + day.weather[0]["icon"]
   }@2x.png`;
+
+  const { temp } = day.main;
+  const far = temp * 1.8 + 32;
+
   return (
     <li className="container p-4 flex items-center justify-center bg-gray-200 rounded-lg my-auto mr-1">
       <div className="my-auto">
         <p className="font-bold text-3xl text-pink-600 mb-2">
-          {Math.round(day.main.temp)}&deg;C
+          {isCelcius ? Math.round(temp) : Math.round(far)}
+          {isCelcius ? "°C" : "°F"}
         </p>
         <p className="text-2xl text-gray-800 tracking-widest">
           {day.weather[0].main}

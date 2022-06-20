@@ -1,6 +1,6 @@
 import moment from "moment";
 
-function DetailCard({ weather_icon, data, isCelcius }) {
+function DetailCard({ weatherIcon, data, isCelcius }) {
   const { clouds, main, weather } = data.list[0];
 
   const temp = main.temp;
@@ -13,9 +13,9 @@ function DetailCard({ weather_icon, data, isCelcius }) {
           {isCelcius ? Math.round(temp) : Math.round(far)}
           {isCelcius ? "°C" : "°F"}
         </p>
-        <p className="text-4xl text-gray-800 tracking-widest">
+        <p className="main-img text-4xl text-gray-800 tracking-widest">
           {weather[0].main}
-          <img src={weather_icon} className="w-1/4 inline" />
+          <img alt="weather icon" className="w-1/4 inline" src={weatherIcon} />
         </p>
         <p className="text-gray-400 text-xs uppercase tracking-widest">
           {weather[0].description}

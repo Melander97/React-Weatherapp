@@ -52,9 +52,7 @@ function App() {
       setWeatherData(data);
       setCity(`${data.city.name}, ${data.city.country}`);
       setWeatherIcon(
-        `${
-          process.env.REACT_APP_ICON_URL + data.list[0].weather[0]["icon"]
-        }@4x.png`
+        `${process.env.REACT_APP_ICON_URL}${data.list[0].weather[0]["icon"]}@4x.png`
       );
     } catch (error) {
       console.log(error);
@@ -67,7 +65,7 @@ function App() {
   };
 
   return (
-    <div className="bg-gray-800 flex items-center justify-center w-screen h-screen py-10">
+    <div className="bg-gray-800 flex items-center justify-center h-screen py-10">
       <div className="flex w-3/4 min-h-full rounded-3xl shadow-lg m-auto bg-gray-100">
         {/* form card section  */}
         <div className="form-container">
@@ -143,7 +141,7 @@ function App() {
                 </button>
                 <DetailCard
                   isCelcius={isCelcius}
-                  weather_icon={weatherIcon}
+                  weatherIcon={weatherIcon}
                   data={weatherData}
                 />
                 <h1 className="text-3xl text-gray-600 mb-4 mt-10">

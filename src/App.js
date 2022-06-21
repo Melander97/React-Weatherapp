@@ -36,15 +36,21 @@ function App() {
 
   const getWeather = async (location) => {
     setWeatherData([]);
-    let how_to_search =
+
+    const how_to_search =
       typeof location === "string"
         ? `q=${location}`
         : `lat=${location[0]}&lon=${location[1]}`;
 
     try {
-      let res = await fetch(`${process.env.REACT_APP_URL + how_to_search}
-      &appid=${API_KEY}&units=metric&cnt=5&exclude=hourly,minutely`);
-      let data = await res.json();
+      const res = await fetch(
+        `${process.env.REACT_APP_URL}${how_to_search}&appid=${API_KEY}&units=metric&cnt=5`
+      );
+
+      /* (`${process.env.REACT_APP_URL + how_to_search}
+        &appid=${API_KEY}&units=metric&cnt=5&exclude=hourly,minutely`); */
+
+      const data = await res.json();
       if (data.cod != 200) {
         setNoData("Location Not Found");
         return;
@@ -95,14 +101,13 @@ function App() {
             >
               <input
                 type="text"
-                placeholder="Enter location"
+                placeholder="Search location"
                 className="relative rounded-xl py-2 px-3 w-2/3 bg-gray-300 bg-opacity-60 text-white placeholder-gray-200"
                 onChange={handleChange}
-                required
               />
               <button type="submit" className="z-10">
                 <i
-                  className="fa fa-search text-white -ml-10 border-l my-auto z-10 cursor-pointer p-3"
+                  className="fa fa-search text-white -ml-10 border-l my-auto z-10 hover:text-gray-600 cursor-pointer p-3"
                   aria-hidden="true"
                   type="submit"
                 ></i>
@@ -112,6 +117,7 @@ function App() {
                 aria-hidden="true"
                 onClick={() => {
                   navigator.geolocation.getCurrentPosition(myIP);
+                  console.log(myIP);
                 }}
               ></i>
             </form>

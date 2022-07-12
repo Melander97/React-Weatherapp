@@ -1,3 +1,4 @@
+import { data } from "autoprefixer";
 import moment from "moment";
 
 function SummaryCard({ day, isCelcius }) {
@@ -9,7 +10,7 @@ function SummaryCard({ day, isCelcius }) {
   const far = temp * 1.8 + 32;
 
   return (
-    <li className="container p-4 flex items-center justify-center bg-gray-200 rounded-lg my-auto mr-1">
+    <li className="container p-4 flex items-center justify-center bg-gray-200 rounded-lg my-auto mr-1 h-full">
       <div className="my-auto">
         <p className="font-bold text-3xl text-pink-600 mb-2">
           {isCelcius ? Math.round(temp) : Math.round(far)}
@@ -29,7 +30,7 @@ function SummaryCard({ day, isCelcius }) {
           {day.weather[0].description}
         </p>
         <p className="tracking-wider">
-          {moment(day.dt_txt).format("dddd hh:mm")}am
+          {moment(day.dt_txt).format("YYYY-MM-DD")}
         </p>
       </div>
     </li>

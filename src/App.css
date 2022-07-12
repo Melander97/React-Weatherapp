@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,12 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.App.Warm {
-  background-image: url('./assets/rainy.jpeg');
-}
-
-.App.Sand {
-  background-image: url('./assets/cloudy.jpeg');
-}
-

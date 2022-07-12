@@ -47,9 +47,6 @@ function App() {
         `${process.env.REACT_APP_URL}${how_to_search}&appid=${API_KEY}&units=metric&cnt=5`
       );
 
-      /* (`${process.env.REACT_APP_URL + how_to_search}
-        &appid=${API_KEY}&units=metric&cnt=5&exclude=hourly,minutely`); */
-
       const data = await res.json();
       if (data.cod != 200) {
         setNoData("Location Not Found");
@@ -71,7 +68,7 @@ function App() {
   };
 
   return (
-    <div className="bg-gray-800 flex items-center justify-center h-screen py-10">
+    <div className="bg-gray-800 flex items-center justify-center h-screen py-8">
       <div className="flex w-3/4 min-h-full rounded-3xl shadow-lg m-auto bg-gray-100">
         {/* form card section  */}
         <div className="form-container">
@@ -124,7 +121,7 @@ function App() {
           </div>
         </div>
         {/* info card section  */}
-        <div className="w-2/4 p-5">
+        <div className="w-2/4 ml-5 mr-5">
           <Header />
           <div className="flex flex-col my-10">
             {/* card jsx  */}
@@ -136,7 +133,6 @@ function App() {
               </div>
             ) : (
               <>
-                <h1 className="text-5xl text-gray-800 mt-auto mb-4">Today</h1>
                 <button
                   onClick={() => {
                     changeUnit();
@@ -145,6 +141,7 @@ function App() {
                 >
                   Convert to farenheit
                 </button>
+                <h1 className="text-5xl text-gray-800 mt-auto mb-4">Today</h1>
                 <DetailCard
                   isCelcius={isCelcius}
                   weatherIcon={weatherIcon}

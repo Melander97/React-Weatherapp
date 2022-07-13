@@ -7,7 +7,7 @@ function DetailCard({ weatherIcon, data, isCelcius }) {
   const far = temp * 1.8 + 32;
 
   return (
-    <div className="container p-4 flex items-center justify-center shadow-lg rounded-lg bg-white h-1/3 mb-auto">
+    <div className="city-state container p-4 flex items-center justify-center shadow-lg rounded-lg bg-white h-1/3 mb-auto">
       <div className="my-auto">
         <p className="font-bold text-5xl text-pink-800 mb-2">
           {isCelcius ? Math.round(temp) : Math.round(far)}

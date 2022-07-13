@@ -4,6 +4,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 
+hmtl {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
@@ -26,4 +30,29 @@ h1 {
   margin-left: 2px;
   margin-top: -3px;
   @apply animate-ping bg-pink-800;
+}
+
+.weatherapp {
+  font-size: 16px;
+}
+
+@media (min-width: 1024px) {
+  .form-container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form-container {
+    height: 50%;
+  }
 }

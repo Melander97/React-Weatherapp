@@ -87,8 +87,8 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col items-center justify-center h-full">
-            <h1 className="text-white text-2xl">
-              The Only Weather Forecast You Need
+            <h1 className="weatherapp text-white text-2xl">
+              Your local weatherapp
             </h1>
             <hr className="h-1 bg-white w-1/4 rounded-full my-5" />
             <form

@@ -19,6 +19,7 @@ h1 {
   background: url("./assets/desert.jpg") no-repeat 50% 40% / cover;
   height: auto;
   @apply w-2/4 p-5 rounded-3xl;
+  border-radius: 20px 0px 0px 20px;
 }
 
 .alert-notice::after {
@@ -52,7 +53,85 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
+  .maindiv {
+    font-size: 70%;
+    clear: both;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .form-container {
-    height: 50%;
+    height: 35%;
+    position: absolute;
+    width: 42.5vh;
+    border-radius: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .infocard {
+    display: flex;
+    flex-direction: column;
+    margin-right: 500px;
+    position: absolute;
+    margin-top: 35vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .city-state {
+    height: 40vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .headeroptions {
+    width: 50px;
+    margin-left: 70px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: 135%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .todayh1 {
+    font-size: 20px;
+    margin-left: 90px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  button {
+    height: 5vh;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .convertbutton {
+    height: 4vh;
+    font-size: 10px;
+    background-color: rgb(48, 46, 46);
+    margin-left: 50px;
+    margin-top: -10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mylocation {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  p {
+    font-size: 14px;
   }
 }

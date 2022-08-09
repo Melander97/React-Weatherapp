@@ -69,7 +69,7 @@ function App() {
 
   return (
     <div className="bg-gray-800 flex items-center justify-center h-screen py-8">
-      <div className="flex w-3/4 min-h-full rounded-3xl shadow-lg m-auto bg-gray-100">
+      <div className="maindiv flex w-3/4 min-h-full rounded-3xl shadow-lg m-auto bg-gray-100">
         {/* form card section  */}
         <div className="form-container">
           <div className="flex items-center justify-center">
@@ -110,7 +110,7 @@ function App() {
                 ></i>
               </button>
               <i
-                className="fa fa-map-marker-alt my-auto cursor-pointer p-3 text-white"
+                className="mylocation fa fa-map-marker-alt my-auto cursor-pointer p-3 text-white"
                 aria-hidden="true"
                 onClick={() => {
                   navigator.geolocation.getCurrentPosition(myIP);
@@ -121,13 +121,13 @@ function App() {
           </div>
         </div>
         {/* info card section  */}
-        <div className="w-2/4 ml-5 mr-5">
+        <div className="infocard w-2/4 ml-5 mr-5">
           <Header />
-          <div className="flex flex-col my-10">
+          <div className="flex flex-col my-10 nodatayet">
             {/* card jsx  */}
             {weatherData.length === 0 ? (
               <div className="container p-4 flex items-center justify-center h-1/3 mb-auto">
-                <h1 className="text-gray-300 text-4xl font-bold uppercase">
+                <h1 className="nodatayet text-gray-300 text-4xl font-bold uppercase">
                   {noData}
                 </h1>
               </div>
@@ -137,11 +137,13 @@ function App() {
                   onClick={() => {
                     changeUnit();
                   }}
-                  className="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded m-2 w-48"
+                  className="convertbutton bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded m-2 w-48"
                 >
                   Convert to farenheit
                 </button>
-                <h1 className="text-5xl text-gray-800 mt-auto mb-4">Today</h1>
+                <h1 className="todayh1 text-5xl text-gray-800 mt-auto mb-4">
+                  Today
+                </h1>
                 <DetailCard
                   isCelcius={isCelcius}
                   weatherIcon={weatherIcon}

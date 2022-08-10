@@ -4,7 +4,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 
-hmtl {
+html {
   overflow-x: hidden;
 }
 
@@ -12,9 +12,19 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
 }
+
 h1 {
   font-weight: bold;
 }
+
+p {
+  font-size: 16px;
+}
+
+.todayh1 {
+  margin-left: 18rem;
+}
+
 .form-container {
   background: url("./assets/desert.jpg") no-repeat 50% 40% / cover;
   height: auto;
@@ -118,7 +128,7 @@ h1 {
   .convertbutton {
     height: 4vh;
     font-size: 10px;
-    background-color: rgb(48, 46, 46);
+    background-color: rgb(121, 21, 61);
     margin-left: 50px;
     margin-top: -10px;
   }
@@ -133,5 +143,16 @@ h1 {
 @media screen and (max-width: 600px) {
   p {
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .screenheight {
+    height: 152vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid {
   }
 }

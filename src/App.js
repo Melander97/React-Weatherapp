@@ -68,7 +68,7 @@ function App() {
   };
 
   return (
-    <div className="bg-gray-800 flex items-center justify-center h-screen py-8">
+    <div className="screenheight bg-gray-800 flex items-center justify-center h-screen py-8">
       <div className="maindiv flex w-3/4 min-h-full rounded-3xl shadow-lg m-auto bg-gray-100">
         {/* form card section  */}
         <div className="form-container">
@@ -87,8 +87,8 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col items-center justify-center h-full">
-            <h1 className="weatherapp text-white text-2xl">
-              Your local weatherapp
+            <h1 className=" weatherapp text-white text-2xl">
+              Your Super Mega Cool Weatherapp
             </h1>
             <hr className="h-1 bg-white w-1/4 rounded-full my-5" />
             <form
@@ -137,7 +137,7 @@ function App() {
                   onClick={() => {
                     changeUnit();
                   }}
-                  className="convertbutton bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded m-2 w-48"
+                  className="convertbutton bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-3 pt-3 rounded m-1 w-48"
                 >
                   Convert to farenheit
                 </button>
